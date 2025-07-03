@@ -18,4 +18,6 @@ public abstract class Piece
     public Color Color { get; }
 
     public abstract void move();
+
+    public abstract override string ToString();
 }

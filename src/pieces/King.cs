@@ -7,9 +7,9 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-public class Rook : Piece
+public class King : Piece
 {
-    public Rook(Color color) : base(color)
+    public King(Color color) : base(color)
     {
 
     }

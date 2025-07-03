@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessBot.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,9 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-public class Rook : Piece
+internal class Pawn : Piece
 {
-    public Rook(Color color) : base(color)
+    public Pawn(Color color) : base(color)
     {
 
     }

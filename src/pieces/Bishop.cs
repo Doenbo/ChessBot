@@ -7,9 +7,9 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-public class Rook : Piece
+internal class Bishop : Piece
 {
-    public Rook(Color color) : base(color)
+    public Bishop(Color color) : base(color)
     {
 
     }
@@ -19,5 +19,6 @@ public class Rook : Piece
         throw new NotImplementedException();
     }
 
-    public override string ToString() => Color == Color.White ? ((char)0x2657).ToString() : ((char)0x265D).ToString();
+    public override string ToString() => Color == Color.White? ((char)0x2657).ToString() : ((char)0x265D).ToString();
+    
 }

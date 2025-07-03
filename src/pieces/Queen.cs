@@ -1,15 +1,16 @@
-﻿using System;
+﻿using ChessBot.Enums;
+using ChessBot.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-public class Rook : Piece
+internal class Queen : Piece
 {
-    public Rook(Color color) : base(color)
+    public Queen(Color color) : base(color)
     {
 
     }
