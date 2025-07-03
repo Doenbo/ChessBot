@@ -7,18 +7,12 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-internal class Bishop : Piece
+internal class Bishop(Color color, int x, int y) : Piece(color, x, y)
 {
-    public Bishop(Color color) : base(color)
-    {
-
-    }
-
     public override void move()
     {
         throw new NotImplementedException();
     }
 
     public override string ToString() => Color == Color.White? ((char)0x2657).ToString() : ((char)0x265D).ToString();
-    
 }

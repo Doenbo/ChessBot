@@ -20,8 +20,8 @@ namespace ChessBot
         public MainWindow()
         {
             InitializeComponent();
-            var field = new Field();
-            TB1.Text = field.ToString();
+            var board = new Board();
+            TB1.Text = board.ToString();
 
         }
     }

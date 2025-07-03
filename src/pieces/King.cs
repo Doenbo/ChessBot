@@ -7,13 +7,8 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-public class King : Piece
-{
-    public King(Color color) : base(color)
-    {
-
-    }
-
+public class King(Color color, int x, int y) : Piece(color, x, y)
+{ 
     public override void move()
     {
         throw new NotImplementedException();

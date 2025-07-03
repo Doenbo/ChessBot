@@ -8,14 +8,13 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-public abstract class Piece
+public abstract class Piece(Color color, int x, int y)
 {
-    protected Piece(Color color)
-    {
-        Color = color;
-    }
+    public Color Color { get; } = color;
+    public int X { get; set; } = x;
+    public int Y { get; set; } = y;
 
-    public Color Color { get; }
+    //public abstract void getM();
 
     public abstract void move();
 

@@ -8,13 +8,8 @@ using ChessBot.Enums;
 
 namespace ChessBot.Pieces;
 
-internal class Pawn : Piece
+internal class Pawn(Color color, int x, int y) : Piece(color, x, y)
 {
-    public Pawn(Color color) : base(color)
-    {
-
-    }
-
     public override void move()
     {
         throw new NotImplementedException();

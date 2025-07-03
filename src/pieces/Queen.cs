@@ -8,13 +8,8 @@ using System.Threading.Tasks;
 
 namespace ChessBot.Pieces;
 
-internal class Queen : Piece
+internal class Queen(Color color, int x, int y) : Piece(color, x, y)
 {
-    public Queen(Color color) : base(color)
-    {
-
-    }
-
     public override void move()
     {
         throw new NotImplementedException();
