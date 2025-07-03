@@ -19,5 +19,5 @@ public class King : Piece
         throw new NotImplementedException();
     }
 
-    public override string ToString() => Color == Color.White ? ((char)0x2657).ToString() : ((char)0x265D).ToString();
+    public override string ToString() => Color == Color.White ? ((char)0x2654).ToString() : ((char)0x265A).ToString();
 }

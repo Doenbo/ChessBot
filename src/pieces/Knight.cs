@@ -19,5 +19,5 @@ internal class Knight : Piece
         throw new NotImplementedException();
     }
 
-    public override string ToString() => Color == Color.White ? ((char)0x2657).ToString() : ((char)0x265D).ToString();
+    public override string ToString() => Color == Color.White ? ((char)0x2658).ToString() : ((char)0x265E).ToString();
 }

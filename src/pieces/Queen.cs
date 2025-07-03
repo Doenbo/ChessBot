@@ -20,5 +20,5 @@ internal class Queen : Piece
         throw new NotImplementedException();
     }
 
-    public override string ToString() => Color == Color.White ? ((char)0x2657).ToString() : ((char)0x265D).ToString();
+    public override string ToString() => Color == Color.White ? ((char)0x2655).ToString() : ((char)0x265B).ToString();
 }

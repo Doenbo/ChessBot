@@ -19,5 +19,5 @@ public class Rook : Piece
         throw new NotImplementedException();
     }
 
-    public override string ToString() => Color == Color.White ? ((char)0x2657).ToString() : ((char)0x265D).ToString();
+    public override string ToString() => Color == Color.White ? ((char)0x2656).ToString() : ((char)0x265C).ToString();
 }
