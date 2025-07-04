@@ -1,16 +1,15 @@
-﻿using ChessBot.Enums;
-using ChessBot.Pieces;
+﻿using ChessBot.src.enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessBot.Pieces;
+namespace ChessBot.src.pieces;
 
-internal class Queen(Color color, int x, int y) : Piece(color, x, y)
+internal class Queen(Color color) : Piece(color)
 {
-    public override void move()
+    public override void Move()
     {
         throw new NotImplementedException();
     }

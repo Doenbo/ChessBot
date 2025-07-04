@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.Enums;
+using ChessBot.src.enums;
 
-namespace ChessBot.Pieces;
+namespace ChessBot.src.pieces;
 
-public class King(Color color, int x, int y) : Piece(color, x, y)
+public class King(Color color) : Piece(color)
 { 
-    public override void move()
+    public override void Move()
     {
         throw new NotImplementedException();
     }

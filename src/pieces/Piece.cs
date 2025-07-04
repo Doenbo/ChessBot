@@ -4,19 +4,20 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.Enums;
+using ChessBot.src.enums;
+using ChessBot.src.game;
 
-namespace ChessBot.Pieces;
+namespace ChessBot.src.pieces;
 
-public abstract class Piece(Color color, int x, int y)
+public abstract class Piece(Color color)
 {
     public Color Color { get; } = color;
-    public int X { get; set; } = x;
-    public int Y { get; set; } = y;
 
-    //public abstract void getM();
+    public Square? Square { get; set; }
 
-    public abstract void move();
+    //public abstract void GetAvailableMoves();
+
+    public abstract void Move();
 
     public abstract override string ToString();
 }
