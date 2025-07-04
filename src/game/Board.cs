@@ -20,7 +20,7 @@ public class Board
         {
             for (int j = 0; j < 8; j++)
             {
-                board[i, j] = new Square((char)(i + 97), j + 1);
+                board[i, j] = new Square((char)(i + 65), j + 1);
             }
         }
 
@@ -61,6 +61,12 @@ public class Board
         board[7, 7].Piece = new Rook(Color.White);
     }
 
+    public Square GetSquare(string square)
+    {
+        var tmp = Square.Convert(square);
+        return board[tmp.Rank, tmp.File];
+    }
+
     public override string ToString()
     {
         string output = "";
@@ -76,7 +82,7 @@ public class Board
                 //letters
                 else if (i == -1 || i == 8)
                 {
-                    output += (char)(j + 97);
+                    output += (char)(j + 65);
                 }
                 //numbers
                 else if (j == -1 || j == 8)
@@ -86,7 +92,7 @@ public class Board
                 //the actual board
                 else
                 {
-                    output += board[i, j]?.ToString() ?? " ";
+                    output += board[i, j]?.Piece?.ToString() ?? " ";
                 }
             }
             output += "\n";

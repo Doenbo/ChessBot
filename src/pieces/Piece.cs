@@ -15,9 +15,7 @@ public abstract class Piece(Color color)
 
     public Square? Square { get; set; }
 
-    //public abstract void GetAvailableMoves();
-
-    public abstract void Move();
+    public abstract List<Square> GetPotentialMoves();
 
     public abstract override string ToString();
 }

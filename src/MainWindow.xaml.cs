@@ -20,8 +20,15 @@ namespace ChessBot
         public MainWindow()
         {
             InitializeComponent();
-            var board = new Board();
-            TB1.Text = board.ToString();
+            var game = new Game();
+            TB1.Text = game.Board.ToString();
+
+            var moves = game.GetPotentialMoves("B8");
+            moves.ForEach(square =>
+            {
+                TB1.Text += square.ToString() + ",";
+            });
+
 
         }
     }
