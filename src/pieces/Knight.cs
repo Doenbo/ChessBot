@@ -14,14 +14,14 @@ internal class Knight(Color color) : Piece(color)
     {
         return new List<Square>
         {
-            new Square(Square.File-2, Square.Rank-1),
-            new Square(Square.File-2, Square.Rank+1),
-            new Square(Square.File-1, Square.Rank-2),
-            new Square(Square.File-1, Square.Rank+2),
-            new Square(Square.File+1, Square.Rank-2),
-            new Square(Square.File+1, Square.Rank+2),
-            new Square(Square.File+2, Square.Rank-1),
-            new Square(Square.File+2, Square.Rank+1),
+            new Square(Square.Rank-2, Square.File-1),
+            new Square(Square.Rank-2, Square.File+1),
+            new Square(Square.Rank-1, Square.File-2),
+            new Square(Square.Rank-1, Square.File+2),
+            new Square(Square.Rank+1, Square.File-2),
+            new Square(Square.Rank+1, Square.File+2),
+            new Square(Square.Rank+2, Square.File-1),
+            new Square(Square.Rank+2, Square.File+1),
         };
     }
 

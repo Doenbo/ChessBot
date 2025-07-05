@@ -10,10 +10,10 @@ namespace ChessBot.src.game;
 public class Square
 {
     private Piece? piece;
-    private int file;
-    private int rank;
+    private int file; //a-h
+    private int rank; //1-8
 
-    public Square(int file, int rank)
+    public Square(int rank, int file)
     {
         if (file < 0 && file > 7 ||
             rank < 0 && rank > 7)
@@ -26,12 +26,13 @@ public class Square
         this.rank = rank;
 
     }
+
     public Square(string square)
     {
         if (square.Length != 2)
         { throw new ArgumentException(); }
 
-        //TODO check and format
+        //TODO check
 
         this.piece = null;
         this.file = square[0]-65;
@@ -64,6 +65,6 @@ public class Square
 
     public override string ToString()
     {
-        return " " + (char)(file+65) + (8-rank);
+        return "" + (char)(file+65) + (8-rank);
     }
 }
