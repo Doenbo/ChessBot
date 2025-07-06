@@ -15,8 +15,7 @@ public class Square
 
     public Square(int rank, int file)
     {
-        if (file < 0 && file > 7 ||
-            rank < 0 && rank > 7)
+        if (file < 0 || file > 7 || rank < 0 || rank > 7)
         {
             throw new ArgumentException();
         }
@@ -29,14 +28,17 @@ public class Square
 
     public Square(string square)
     {
-        if (square.Length != 2)
-        { throw new ArgumentException(); }
+        if (square.Length != 2) { throw new ArgumentException(); }
 
-        //TODO check
+        if (square[0] < 65 || square[0] > 72 ||
+            square[1] < 49 || square[1] > 56)
+        {
+            throw new ArgumentException();
+        }
 
         this.piece = null;
-        this.file = square[0]-65;
-        this.rank = 56-square[1];
+        this.file = square[0] - 65;
+        this.rank = 56 - square[1];
     }
 
     public int File { get { return file; } set { file = value; } } //a-h
@@ -65,6 +67,6 @@ public class Square
 
     public override string ToString()
     {
-        return "" + (char)(file+65) + (8-rank);
+        return "" + (char)(file + 65) + (8 - rank);
     }
 }

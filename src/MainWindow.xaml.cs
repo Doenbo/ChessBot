@@ -23,11 +23,32 @@ namespace ChessBot
             var game = new Game();
             TB1.Text = game.Board.ToString();
 
+
+            //KNIGHT
             var moves = game.GetPotentialMoves("B8");
+            TB1.Text += "\nB8 can go to: ";
             moves.ForEach(square =>
             {
                 TB1.Text += square.ToString() + ",";
             });
+
+            //KING
+            moves = game.GetPotentialMoves("E8");
+            TB1.Text += "\nE8 can go to: ";
+            moves.ForEach(square =>
+            {
+                TB1.Text += square.ToString() + ",";
+            });
+
+
+            //QUEEN
+            moves = game.GetPotentialMoves("D8");
+            TB1.Text += "\nD8 can go to: ";
+            moves.ForEach(square =>
+            {
+                TB1.Text += square.ToString() + ",";
+            });
+
 
 
         }
