@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1600">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="864" Width="1580" Name="TB1" FontSize="42" />
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Height="864" Width="1580" Name="TB1" FontSize="30" />
 
     </Grid>
 </Window>

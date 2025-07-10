@@ -48,6 +48,7 @@ public class Square
     public Piece Piece
     {
         get => piece;
+
         set
         {
             piece = value;

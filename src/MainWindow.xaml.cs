@@ -50,6 +50,31 @@ namespace ChessBot
             });
 
 
+            //ROOK
+            moves = game.GetPotentialMoves("A8");
+            TB1.Text += "\nA8 can go to: ";
+            moves.ForEach(square =>
+            {
+                TB1.Text += square.ToString() + ",";
+            });
+
+
+            //BISHOP
+            moves = game.GetPotentialMoves("C8");
+            TB1.Text += "\nC8 can go to: ";
+            moves.ForEach(square =>
+            {
+                TB1.Text += square.ToString() + ",";
+            });
+
+
+            //PAWN
+            moves = game.GetPotentialMoves("C7");
+            TB1.Text += "\nC7 can go to: ";
+            moves.ForEach(square =>
+            {
+                TB1.Text += square.ToString() + ",";
+            });
 
         }
     }
