@@ -13,9 +13,9 @@ public abstract class Piece(Color color)
 {
     public Color Color { get; } = color;
 
-    public Square? Square { get; set; }
+    public Position? Position { get; set; }
 
-    public abstract List<Square> GetPotentialMoves();
+    public abstract List<Position> GetPotentialMoves();
 
     protected enum Direction
     {
@@ -24,39 +24,39 @@ public abstract class Piece(Color color)
         Equal
     }
 
-    protected List<Square> GetPotentialMoves(Direction rank, Direction file)
+    protected List<Position> GetPotentialMoves(Direction rank, Direction file)
     {
-        if (Square == null) throw new ArgumentNullException(nameof(Square));
+        if (Position == null) throw new ArgumentNullException(nameof(Square));
 
-        var result = new List<Square>();
+        var result = new List<Position>();
         int i = 1;
         while (i <= 7)
         {
             if (0 == 1) { }
             //+=
-            else if (rank == Direction.Plus && file == Direction.Equal && Square.Rank + i <= 7)
-            { result.Add(new Square(Square.Rank + i, Square.File)); i++; }
+            else if (rank == Direction.Plus && file == Direction.Equal && Position.Rank + i <= 7)
+            { result.Add(new Position(Position.Rank + i, Position.File)); i++; }
             //-=
-            else if (rank == Direction.Minus && file == Direction.Equal && Square.Rank - i >= 0)
-            { result.Add(new Square(Square.Rank - i, Square.File)); i++; }
+            else if (rank == Direction.Minus && file == Direction.Equal && Position.Rank - i >= 0)
+            { result.Add(new Position(Position.Rank - i, Position.File)); i++; }
             //=+
-            else if (rank == Direction.Equal && file == Direction.Plus && Square.File + i <= 7)
-            { result.Add(new Square(Square.Rank, Square.File + i)); i++; }
+            else if (rank == Direction.Equal && file == Direction.Plus && Position.File + i <= 7)
+            { result.Add(new Position(Position.Rank, Position.File + i)); i++; }
             //=-
-            else if (rank == Direction.Equal && file == Direction.Minus && Square.File - i >= 0)
-            { result.Add(new Square(Square.Rank, Square.File - i)); i++; }
+            else if (rank == Direction.Equal && file == Direction.Minus && Position.File - i >= 0)
+            { result.Add(new Position(Position.Rank, Position.File - i)); i++; }
             //++
-            else if (rank == Direction.Plus && file == Direction.Plus && Square.Rank + i <= 7 && Square.File + i <= 7)
-            { result.Add(new Square(Square.Rank + i, Square.File + i)); i++; }
+            else if (rank == Direction.Plus && file == Direction.Plus && Position.Rank + i <= 7 && Position.File + i <= 7)
+            { result.Add(new Position(Position.Rank + i, Position.File + i)); i++; }
             //--
-            else if (rank == Direction.Minus && file == Direction.Minus && Square.Rank - i >= 0 && Square.File - i >= 0)
-            { result.Add(new Square(Square.Rank - i, Square.File - i)); i++; }
+            else if (rank == Direction.Minus && file == Direction.Minus && Position.Rank - i >= 0 && Position.File - i >= 0)
+            { result.Add(new Position(Position.Rank - i, Position.File - i)); i++; }
             //+-
-            else if (rank == Direction.Plus && file == Direction.Minus && Square.Rank + i <= 7 && Square.File - i >= 0)
-            { result.Add(new Square(Square.Rank + i, Square.File - i)); i++; }
+            else if (rank == Direction.Plus && file == Direction.Minus && Position.Rank + i <= 7 && Position.File - i >= 0)
+            { result.Add(new Position(Position.Rank + i, Position.File - i)); i++; }
             //-+
-            else if (rank == Direction.Minus && file == Direction.Plus && Square.Rank - i >= 0 && Square.File + i <= 7)
-            { result.Add(new Square(Square.Rank - i, Square.File + i)); i++; }
+            else if (rank == Direction.Minus && file == Direction.Plus && Position.Rank - i >= 0 && Position.File + i <= 7)
+            { result.Add(new Position(Position.Rank - i, Position.File + i)); i++; }
             else
             { break; }
         }

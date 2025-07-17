@@ -10,11 +10,11 @@ namespace ChessBot.src.pieces;
 
 internal class Bishop(Color color) : Piece(color)
 {
-    public override List<Square> GetPotentialMoves()
+    public override List<Position> GetPotentialMoves()
     {
-        if (Square == null) throw new ArgumentNullException(nameof(Square));
+        if (Position == null) throw new ArgumentNullException(nameof(Position));
 
-        var result = new List<Square>();
+        var result = new List<Position>();
         result.AddRange(GetPotentialMoves(Direction.Plus, Direction.Plus));
         result.AddRange(GetPotentialMoves(Direction.Minus, Direction.Minus));
         result.AddRange(GetPotentialMoves(Direction.Plus, Direction.Minus));

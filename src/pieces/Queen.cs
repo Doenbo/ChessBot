@@ -10,11 +10,11 @@ namespace ChessBot.src.pieces;
 
 internal class Queen(Color color) : Piece(color)
 {
-    public override List<Square> GetPotentialMoves()
+    public override List<Position> GetPotentialMoves()
     {
-        if (Square == null) throw new ArgumentNullException(nameof(Square));
+        if (Position == null) throw new ArgumentNullException(nameof(Position));
         
-        var result = new List<Square>();
+        var result = new List<Position>();
         result.AddRange(GetPotentialMoves(Direction.Plus, Direction.Equal));
         result.AddRange(GetPotentialMoves(Direction.Minus, Direction.Equal));
         result.AddRange(GetPotentialMoves(Direction.Equal, Direction.Plus));

@@ -15,7 +15,7 @@ public class Game
         Board = new Board();
     }
 
-    public List<Square> GetPotentialMoves(string square) => Board.GetSquare(square).Piece.GetPotentialMoves();
+    public List<Position> GetPotentialMoves(string square) => Board.GetPiece(square).GetPotentialMoves();
     
-    public void Move(Square from, Square to) { }
+    public void Move(Position from, Position to) { }
 }

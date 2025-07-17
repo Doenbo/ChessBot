@@ -10,19 +10,19 @@ namespace ChessBot.src.pieces;
 
 internal class Knight(Color color) : Piece(color)
 {
-    public override List<Square> GetPotentialMoves()
+    public override List<Position> GetPotentialMoves()
     {
-        if (Square == null) throw new ArgumentNullException(nameof(Square));
+        if (Position == null) throw new ArgumentNullException(nameof(Position));
 
-        var result = new List<Square>();
-        if (Square.Rank - 2 >= 0 && Square.File - 1 >= 0) { result.Add(new Square(Square.Rank - 2, Square.File - 1)); }
-        if (Square.Rank - 2 >= 0 && Square.File + 1 <= 7) { result.Add(new Square(Square.Rank - 2, Square.File + 1)); }
-        if (Square.Rank - 1 >= 0 && Square.File - 2 >= 0) { result.Add(new Square(Square.Rank - 1, Square.File - 2)); }
-        if (Square.Rank - 1 >= 0 && Square.File + 2 <= 7) { result.Add(new Square(Square.Rank - 1, Square.File + 2)); }
-        if (Square.Rank + 1 <= 7 && Square.File - 2 >= 0) { result.Add(new Square(Square.Rank + 1, Square.File - 2)); }
-        if (Square.Rank + 1 <= 7 && Square.File + 2 <= 7) { result.Add(new Square(Square.Rank + 1, Square.File + 2)); }
-        if (Square.Rank + 2 <= 7 && Square.File - 1 >= 0) { result.Add(new Square(Square.Rank + 2, Square.File - 1)); }
-        if (Square.Rank + 2 <= 7 && Square.File + 1 <= 7) { result.Add(new Square(Square.Rank + 2, Square.File + 1)); }
+        var result = new List<Position>();
+        if (Position.Rank - 2 >= 0 && Position.File - 1 >= 0) { result.Add(new Position(Position.Rank - 2, Position.File - 1)); }
+        if (Position.Rank - 2 >= 0 && Position.File + 1 <= 7) { result.Add(new Position(Position.Rank - 2, Position.File + 1)); }
+        if (Position.Rank - 1 >= 0 && Position.File - 2 >= 0) { result.Add(new Position(Position.Rank - 1, Position.File - 2)); }
+        if (Position.Rank - 1 >= 0 && Position.File + 2 <= 7) { result.Add(new Position(Position.Rank - 1, Position.File + 2)); }
+        if (Position.Rank + 1 <= 7 && Position.File - 2 >= 0) { result.Add(new Position(Position.Rank + 1, Position.File - 2)); }
+        if (Position.Rank + 1 <= 7 && Position.File + 2 <= 7) { result.Add(new Position(Position.Rank + 1, Position.File + 2)); }
+        if (Position.Rank + 2 <= 7 && Position.File - 1 >= 0) { result.Add(new Position(Position.Rank + 2, Position.File - 1)); }
+        if (Position.Rank + 2 <= 7 && Position.File + 1 <= 7) { result.Add(new Position(Position.Rank + 2, Position.File + 1)); }
         return result;
     }
 

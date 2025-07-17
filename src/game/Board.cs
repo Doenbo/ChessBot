@@ -61,31 +61,36 @@ public class Board
         board[7, 7].Piece = new Rook(Color.White);
     }
 
-    public Square GetSquare(Square square) => board[square.Rank, square.File];
-
-    public Square GetSquare(string square)
+    public Position GetPosition(string pos)
     {
-        if (square.Length != 2 ||
-            square[0] < 65 || square[0] > 72 ||
-            square[1] < 49 || square[1] > 56)
+        if (pos.Length != 2 ||
+            pos[0] < 65 || pos[0] > 72 ||
+            pos[1] < 49 || pos[1] > 56)
         {
             throw new ArgumentException();
         }
 
-        int file = square[0] - 65;
-        int rank = 56 - square[1];
+        int file = pos[0] - 65;
+        int rank = 56 - pos[1];
 
-        return board[rank, file];
+        return board[rank, file].Position;
+    }
+
+    //TODO HMMMMM Copy of Piece??
+    public Piece GetPiece(string pos)
+    {
+        var tmp = GetPosition(pos);
+        return board[tmp.Rank, tmp.File].Piece;
     }
 
     public bool Move(string from, string to)
     {
-        var sFrom = GetSquare(from);
-        var sTo = GetSquare(to);
-        if (!sFrom.Piece.GetPotentialMoves().Contains(sTo)) { return false; }
+        var sFrom = GetPosition(from);
+        var sTo = GetPosition(to);
+        if (!board[sFrom.Rank, sFrom.File].Piece.GetPotentialMoves().Contains(sTo)) { return false; }
 
-        sTo.Piece = sFrom.Piece;
-        sFrom.Piece = null!;
+        board[sTo.Rank, sTo.File].Piece = board[sFrom.Rank, sFrom.File].Piece;
+        board[sFrom.Rank, sFrom.File].Piece = null!;
         return true;
 
     }
