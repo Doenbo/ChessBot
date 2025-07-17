@@ -26,44 +26,19 @@ public class Square
 
     }
 
-    public Square(string square)
-    {
-        if (square.Length != 2) { throw new ArgumentException(); }
-
-        if (square[0] < 65 || square[0] > 72 ||
-            square[1] < 49 || square[1] > 56)
-        {
-            throw new ArgumentException();
-        }
-
-        this.piece = null;
-        this.file = square[0] - 65;
-        this.rank = 56 - square[1];
-    }
-
     public int File { get { return file; } set { file = value; } } //a-h
 
     public int Rank { get { return rank; } set { rank = value; } } //1-8
 
     public Piece Piece
     {
-        get => piece;
+        get => piece!;
 
         set
         {
             piece = value;
             piece.Square = this;
         }
-    }
-
-    public static Square Convert(string square)
-    {
-        return new Square(square);
-    }
-
-    public static string Convert(Square square)
-    {
-        return square.ToString();
     }
 
     public override string ToString()

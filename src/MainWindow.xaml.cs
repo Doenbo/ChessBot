@@ -76,6 +76,10 @@ namespace ChessBot
                 TB1.Text += square.ToString() + ",";
             });
 
+            //MOVE KNIGHT
+            game.Board.Move("B8", "C6");
+            TB1.Text = game.Board.ToString();
+
         }
     }
 }

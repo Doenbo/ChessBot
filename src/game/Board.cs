@@ -63,7 +63,32 @@ public class Board
 
     public Square GetSquare(Square square) => board[square.Rank, square.File];
 
-    public Square GetSquare(string square) => GetSquare(Square.Convert(square));
+    public Square GetSquare(string square)
+    {
+        if (square.Length != 2 ||
+            square[0] < 65 || square[0] > 72 ||
+            square[1] < 49 || square[1] > 56)
+        {
+            throw new ArgumentException();
+        }
+
+        int file = square[0] - 65;
+        int rank = 56 - square[1];
+
+        return board[rank, file];
+    }
+
+    public bool Move(string from, string to)
+    {
+        var sFrom = GetSquare(from);
+        var sTo = GetSquare(to);
+        if (!sFrom.Piece.GetPotentialMoves().Contains(sTo)) { return false; }
+
+        sTo.Piece = sFrom.Piece;
+        sFrom.Piece = null!;
+        return true;
+
+    }
         
     public override string ToString()
     {
