@@ -78,7 +78,7 @@ namespace ChessBot
 
             //MOVE KNIGHT
             game.Board.Move("B8", "C6");
-            TB1.Text = game.Board.ToString();
+            TB1.Text += "\n" + game.Board.ToString();
 
         }
     }

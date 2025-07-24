@@ -80,17 +80,26 @@ public class Board
     public Piece GetPiece(string pos)
     {
         var tmp = GetPosition(pos);
-        return board[tmp.Rank, tmp.File].Piece;
+        return board[tmp.Rank, tmp.File].Piece!;
     }
 
     public bool Move(string from, string to)
     {
-        var sFrom = GetPosition(from);
-        var sTo = GetPosition(to);
-        if (!board[sFrom.Rank, sFrom.File].Piece.GetPotentialMoves().Contains(sTo)) { return false; }
+        var posFrom = GetPosition(from);
+        var posTo = GetPosition(to);
 
-        board[sTo.Rank, sTo.File].Piece = board[sFrom.Rank, sFrom.File].Piece;
-        board[sFrom.Rank, sFrom.File].Piece = null!;
+        var pieceFrom = board[posFrom.Rank, posFrom.File].Piece;
+        if(pieceFrom == null) { return false; }
+
+        var pieceTo = board[posTo.Rank, posTo.File].Piece;
+        if (pieceTo != null && pieceTo.Color == pieceFrom.Color) { return false; }
+
+        var potMoves = pieceFrom.GetPotentialMoves();
+        var cont = potMoves.Any(pos => (pos.Rank == posTo.Rank && pos.File == posTo.File));
+        if (!cont) { return false; }
+
+        board[posTo.Rank, posTo.File].Piece = board[posFrom.Rank, posFrom.File].Piece;
+        board[posFrom.Rank, posFrom.File].Piece = null!;
         return true;
 
     }
@@ -120,7 +129,7 @@ public class Board
                 //the actual board
                 else
                 {
-                    output += board[i, j]?.Piece?.ToString() ?? " ";
+                    output += board[i, j].Piece?.ToString() ?? " ";
                 }
             }
             output += "\n";

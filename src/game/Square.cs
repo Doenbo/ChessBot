@@ -13,18 +13,20 @@ namespace ChessBot.src.game;
 public class Square(int rank, int file)
 {
     private Piece? piece = null;
-    //private readonly Position position;
 
-    public Position Position { get; set; } = new Position(rank, file);
+    public Position Position { get; } = new Position(rank, file);
 
-    public Piece Piece
+    public Piece? Piece //{ get; set; }
     {
         get => piece!;
 
         set
         {
             piece = value;
-            piece.Position = this.Position;
+            if (piece != null)
+            {
+                piece.Position = this.Position;
+            }
         }
     }
 }
