@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.src.enums;
-using ChessBot.src.game;
+using ChessBot.Model.Enums;
+using ChessBot.Model.Game;
 
-namespace ChessBot.src.pieces;
+namespace ChessBot.Model.Pieces;
 
 public abstract class Piece(Color color)
 {

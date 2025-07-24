@@ -1,12 +1,12 @@
-﻿using ChessBot.src.enums;
-using ChessBot.src.game;
+﻿using ChessBot.Model.Enums;
+using ChessBot.Model.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessBot.src.pieces;
+namespace ChessBot.Model.Pieces;
 
 internal class Pawn(Color color) : Piece(color)
 {

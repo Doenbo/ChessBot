@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.src.pieces;
+using ChessBot.Model.Pieces;
 
-namespace ChessBot.src.game;
+namespace ChessBot.Model.Game;
 
 //TODO Factory Pattern?
 //-> So only board can call this constructor
@@ -25,7 +25,7 @@ public class Square(int rank, int file)
             piece = value;
             if (piece != null)
             {
-                piece.Position = this.Position;
+                piece.Position = Position;
             }
         }
     }

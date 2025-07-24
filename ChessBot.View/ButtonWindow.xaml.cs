@@ -8,9 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ChessBot.src.game;
+using ChessBot.Model.Game;
 
-namespace ChessBot
+namespace ChessBot.View
 {
     /// <summary>
     /// Interaction logic for ButtonWindow.xaml

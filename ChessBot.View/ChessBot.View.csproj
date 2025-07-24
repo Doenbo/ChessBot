@@ -9,11 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Page Remove="src\App.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ApplicationDefinition Include="src\App.xaml" />
+    <ProjectReference Include="..\ChessBot.Model\ChessBot.Model.csproj" />
+    <ProjectReference Include="..\ChessBot.ViewModel\ChessBot.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

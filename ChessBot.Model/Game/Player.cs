@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.src.enums;
+using ChessBot.Model.Enums;
 
-namespace ChessBot.src.game;
+namespace ChessBot.Model.Game;
 
 internal class Player(Color color)
 {

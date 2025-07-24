@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessBot.src.enums;
+namespace ChessBot.Model.Enums;
 
 public enum Color
 {

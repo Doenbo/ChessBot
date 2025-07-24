@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChessBot.src.pieces;
-using ChessBot.src.enums;
+using ChessBot.Model.Enums;
+using ChessBot.Model.Pieces;
 
-namespace ChessBot.src.game;
+namespace ChessBot.Model.Game;
 
 public class Board
 {
@@ -95,7 +95,7 @@ public class Board
         if (pieceTo != null && pieceTo.Color == pieceFrom.Color) { return false; }
 
         var potMoves = pieceFrom.GetPotentialMoves();
-        var cont = potMoves.Any(pos => (pos.Rank == posTo.Rank && pos.File == posTo.File));
+        var cont = potMoves.Any(pos => pos.Rank == posTo.Rank && pos.File == posTo.File);
         if (!cont) { return false; }
 
         board[posTo.Rank, posTo.File].Piece = board[posFrom.Rank, posFrom.File].Piece;
